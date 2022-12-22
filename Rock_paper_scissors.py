@@ -1,10 +1,8 @@
 import random
 
-
 playlist = ["r", "p", "s"]
 names = { "r" : "rock", "p" : "paper", "s":"scissors"}
 keys = {"r": "s", "p":"r", "s":"p"}
-
 
 def play():
     user_play = input("Rock(r), paper(p) or scissors(s) ? \n ").lower()
@@ -17,7 +15,6 @@ def play():
         return('It is a draw')
     else:
         return "You lose"
-
 
 def is_win(player, opponent):
     if keys[player] == opponent:
