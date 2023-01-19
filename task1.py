@@ -13,5 +13,5 @@ def has_values(list):
             return False
     except KeyError:
         return False
-        
-print(has_values([19, 19,15, 5, 3, 5, 5, 2]))
+list = [19, 19, 5, 5, 5, 5, 5]
+print(has_values(list))
