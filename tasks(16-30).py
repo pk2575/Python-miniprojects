@@ -29,4 +29,33 @@ def task19(string):
     else:
         return [letter for letter in string if string.islower() and ord(letter)%2 == 0]
 
-        
+
+# TASK 20
+# Write a Python program to determine the direction ('increasing' or 'decreasing') of monotonic sequence numbers.
+def task20(lst):
+    if all( lst[i] < lst[i + 1] for i in range(len(lst)-1)):
+        return str("Increasing")
+    elif all( lst[i] > lst[i + 1] for i in range(len(lst)-1)):
+        return str("Decreasing")
+    else:
+        return str("Not a monotonic sequence!")
+
+
+# TASK 21
+# Write a Python program to check, for each string in a given list,
+# whether the last character is an isolated letter or not. Return True otherwise False. 
+def task21(lst):
+    return [len(word.split(" ")[-1]) == 1 for word in lst]
+
+
+# TASK 22
+# Write a Python program to compute the sum of the ASCII values of the upper-case characters in a given string.
+def task22(str):
+    return sum(ord(char) for char in str if char.isupper())
+
+
+# TASK 23
+# Write a Python program to find the indices at which the numbers in the list drop.
+def task23(lst):
+    return [ (idx + 1) for idx in range(len(lst)-1) if lst[idx] > lst[idx +1]]
+
