@@ -59,3 +59,36 @@ def task22(str):
 def task23(lst):
     return [ (idx + 1) for idx in range(len(lst)-1) if lst[idx] > lst[idx +1]]
 
+# TASK 24
+# Write a Python program to create a list whose ith element is the maximum of the first i elements from an input list.
+def task24(lst):
+    return [max(lst[ :i]) for i in range(1, len(lst) + 1 )]
+
+# TASK 25/26
+# Write a Python program to find the largest number where commas or periods are decimal points.
+def task26(lst):
+    return max(lst, key = lambda x : float(x.replace(",","."))).replace(",", ".")
+
+# TASK 27
+# Write a Python program to find x that minimizes the mean squared deviation from a given list of numbers.
+def task27(lst):
+    return sum(lst)/len(lst)
+
+# TASK 28
+# Write a Python program to select a string from a given list of strings with the most unique characters.
+def task28(lst):
+    return max(lst, key= lambda x : len(set(x)))
+
+# TASK 29
+# Write a Python program to find the indices of two numbers that sum to 0 in a given list of numbers.
+def task29(lst):
+    for i in lst:
+        if i > 0:
+            if -i in lst:
+                return [lst.index(i), lst.index(-i)]
+
+# TASK 30
+# Write a Python program to find a list of strings that have fewer total characters (including repetitions).
+def task30(lst):
+    sums = [sum(len(word) for word in group) for group in lst]
+    return lst[sums.index(min(sums))]
